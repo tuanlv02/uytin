@@ -23,12 +23,12 @@ const Content = {
       .sort((a, b) => dayjs(b.createdAt).diff(dayjs(a.createdAt)))
       .map((item, index) => {
         return `<div class="mt-3 mb-6">
-      <p>${index + 1}. Giao dịch lúc ${dayjs(item.createdAt).format(
-          "HH:mm DD/MM/YYYY"
-        )}</p>
+      <p class="font-bold">${index + 1}. Giao dịch lúc ${dayjs(
+          item.createdAt
+        ).format("HH:mm DD/MM/YYYY")}</p>
         <img src="/images/${item.image}" alt="Ảnh giao dịch số ${
           index + 1
-        }" class="w-96 mx-auto max-w-full" />
+        }" class="w-96 mx-auto max-w-full border rounded-lg overflow-hidden" />
       </div>`;
       })
       .join("")}`;
