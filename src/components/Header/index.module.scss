@@ -1,0 +1,9 @@
+.avatar {
+  @apply w-44 h-44 object-cover rounded-full mx-auto mt-4;
+
+  box-shadow: 0 5px 50px 0 #6c44fc, 0 0 0 7px rgba(107, 74, 255, 0.5);
+}
+
+.name {
+  @apply text-2xl mt-4 font-semibold text-[#6944ff] hover:underline;
+}
