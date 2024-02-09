@@ -23,7 +23,7 @@ const Content = {
       .sort((a, b) => dayjs(b.createdAt).diff(dayjs(a.createdAt)))
       .map((item, index) => {
         return `<div class="mt-3 mb-6">
-      <p>1. Giao dịch số ${index + 1} lúc ${dayjs(item.createdAt).format(
+      <p>${index + 1}. Giao dịch lúc ${dayjs(item.createdAt).format(
           "HH:mm DD/MM/YYYY"
         )}</p>
         <img src="/images/${item.image}" alt="Ảnh giao dịch số ${
