@@ -3,7 +3,7 @@ import Header from "../components/Header/Header";
 
 const HomePage = {
   render() {
-    return `<div class="p-3">
+    return `<div class="px-5 py-3">
       ${Header.render()}
       ${Content.render()}
     </div>`;

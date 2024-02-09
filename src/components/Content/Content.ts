@@ -1,3 +1,6 @@
+import { transactionData } from "../../utils/data";
+import dayjs from "dayjs";
+
 const Content = {
   render() {
     return `<div class="mt-5 max-w-6xl mx-auto">
@@ -16,16 +19,19 @@ const Content = {
     </ul>
     <p class="mt-3">Dưới đây là một số giao dịch của mình</p>
 
-    <div class="mt-3 mb-6">
-      <p>1. Giao dịch số 1</p>
-      <img src="/images/anh-giao-dich-1.jpeg" alt="Ảnh giao dịch số 1" class="w-96 mx-auto" />
-    </div>
-
-    <div class="mt-3 mb-6">
-      <p>2. Giao dịch số 2</p>
-      <img src="/images/anh-giao-dich-1.jpeg" alt="Ảnh giao dịch số 1" class="w-96 mx-auto" />
-    </div>
-    </div>`;
+    ${transactionData
+      .sort((a, b) => dayjs(b.createdAt).diff(dayjs(a.createdAt)))
+      .map((item, index) => {
+        return `<div class="mt-3 mb-6">
+      <p>1. Giao dịch số ${index + 1} lúc ${dayjs(item.createdAt).format(
+          "HH:mm DD/MM/YYYY"
+        )}</p>
+        <img src="/images/${item.image}" alt="Ảnh giao dịch số ${
+          index + 1
+        }" class="w-96 mx-auto max-w-full" />
+      </div>`;
+      })
+      .join("")}`;
   },
 };
 
